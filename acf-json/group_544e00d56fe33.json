@@ -1,0 +1,220 @@
+{
+    "key": "group_544e00d56fe33",
+    "title": "People",
+    "fields": [
+        {
+            "key": "field_52e0877d2e935",
+            "label": "First Name",
+            "name": "first_name",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Johnny",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52e088642e936",
+            "label": "Last Name",
+            "name": "last_name",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Arrowman",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52c4daa79bb42",
+            "label": "Youth or Adviser",
+            "name": "youth_or_adviser",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Youth": "Youth",
+                "Adviser": "Adviser"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Youth",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_524e17ea5d03e",
+            "label": "Email",
+            "name": "team_email",
+            "prefix": "",
+            "type": "email",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "you@domain.com",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_52ed1ebab35c3",
+            "label": "Phone Number",
+            "name": "phone_number",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53c9f4cf35b18",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52c4d82e9bb3f",
+            "label": "Membership Level",
+            "name": "membership_level",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Ordeal, Brotherhood, or Vigil",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Ordeal": "Ordeal",
+                "Brotherhood": "Brotherhood",
+                "Vigil": "Vigil"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_544e03e19c876",
+            "label": "Chapter",
+            "name": "chapter",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Medicine Pipe": "Medicine Pipe",
+                "Medicine Bear": "Medicine Bear",
+                "Spirit Eagle": "Spirit Eagle",
+                "White Eagle": "White Eagle",
+                "Kodiak": "Kodiak",
+                "White Buffalo": "White Buffalo",
+                "Running Antelope": "Running Antelope"
+            },
+            "default_value": [
+
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_545480b1b2419",
+            "label": "Last Initial Only",
+            "name": "last_initial_only",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "oaldr_person"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "tags",
+        "send-trackbacks"
+    ]
+}

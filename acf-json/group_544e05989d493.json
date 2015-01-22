@@ -1,0 +1,88 @@
+{
+    "key": "group_544e05989d493",
+    "title": "Positions",
+    "fields": [
+        {
+            "key": "field_544e05e6be49c",
+            "label": "Is this position open?",
+            "name": "is_this_position_open",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "yes": "Yes",
+                "no": "No"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_544e0595be49b",
+            "label": "Who holds this position?",
+            "name": "person",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                {
+                    "rule_0": {
+                        "field": "field_544e05e6be49c",
+                        "operator": "==",
+                        "value": "no"
+                    }
+                }
+            ],
+            "post_type": [
+                "oaldr_person"
+            ],
+            "taxonomy": "",
+            "filters": "",
+            "elements": [
+                "featured_image"
+            ],
+            "max": 1,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "oaldr_position"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ]
+}
