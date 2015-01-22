@@ -6,6 +6,7 @@ Description: Easily manage Order of the Arrow Leadership Positions
 Author: Kevin McKernan
 Author URI: http://mckernan.in
 Version: 0.1
+GitHub Theme URI: mckernanin/oa-leadership
 */
 
 /*
@@ -36,6 +37,7 @@ if ( ! defined( 'OALDR_PLUGIN_URL' ) )
 include( plugin_dir_path( __FILE__ ) . 'inc/post-types.php');
 include( plugin_dir_path( __FILE__ ) . 'inc/shortcodes.php');
 include( plugin_dir_path( __FILE__ ) . 'inc/taxonomies.php');
+include( plugin_dir_path( __FILE__ ) . 'inc/fields.php');
 
 /*============
 3. Enqueue Assets
