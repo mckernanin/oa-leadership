@@ -5,7 +5,7 @@ Plugin URI: http://mckernan.in/lodge-leadership/
 Description: Easily manage Order of the Arrow Leadership Positions
 Author: Kevin McKernan
 Author URI: http://mckernan.in
-Version: 0.2
+Version: 0.2.1
 GitHub Plugin URI: mckernanin/oa-leadership
 */
 
@@ -85,9 +85,9 @@ add_action( 'customize_register', 'oaldr_customize_register' );
 5. ACF Related Functions
 ============*/
 
-add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+add_filter('acf/settings/save_json', 'oaldr_acf_json_save_point');
  
-function my_acf_json_save_point( $path ) {
+function oaldr_acf_json_save_point( $path ) {
     
     // update path
     $path = plugin_dir_path(__FILE__) . '/acf-json';
@@ -95,5 +95,22 @@ function my_acf_json_save_point( $path ) {
     
     // return
     return $path;
+    
+}
+
+add_filter('acf/settings/load_json', 'oaldr_acf_json_load_point');
+
+function oaldr_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = plugin_dir_path(__FILE__) . '/acf-json';
+    
+    
+    // return
+    return $paths;
     
 }
