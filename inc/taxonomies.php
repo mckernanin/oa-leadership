@@ -128,3 +128,15 @@ function oaldr_custom_taxonomy_section() {
 	register_taxonomy( 'oaldr_section', array( 'oaldr_person' ), $args );
 
 }
+
+// Pick used category via Customizer
+$selected_taxonomy = get_theme_mod('oaldr_categorize_positions');
+
+if ($selected_taxonomy == 'lodge') {
+	add_action( 'init', 'oaldr_custom_taxonomy_lodge', 0 );
+} else if ($selected_taxonomy == 'chapter') {
+	add_action( 'init', 'oaldr_custom_taxonomy_chapter', 0 );
+} else if ($selected_taxonomy == 'section') {
+	add_action( 'init', 'oaldr_custom_taxonomy_section', 0 );
+}
+
