@@ -5,8 +5,9 @@ Plugin URI: http://mckernan.in/lodge-leadership/
 Description: Easily manage Order of the Arrow Leadership Positions
 Author: Kevin McKernan
 Author URI: http://mckernan.in
-Version: 0.2.1
+Version: 0.3
 GitHub Plugin URI: mckernanin/oa-leadership
+Tested up to: 4.1
 */
 
 /*
@@ -67,17 +68,35 @@ function oaldr_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-	       new WP_Customize_Image_Control(
-	           $wp_customize,
-	           'oaldr_headshot_default_control',
-	           array(
-	               'label'      => __( 'Upload a placeholder', 'theme_name' ),
-	               'section'    => 'oaldr_settings',
-	               'settings'   => 'oaldr_headshot_default',
-	               'context'    => 'your_setting_context' 
-	           )
-	       )
-	   );
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'oaldr_headshot_default_control',
+           array(
+               'label'      => __( 'Upload a placeholder', 'OA Leadership Position Plugin' ),
+               'section'    => 'oaldr_settings',
+               'settings'   => 'oaldr_headshot_default',
+               'context'    => 'your_setting_context' 
+           )
+       )
+   );
+
+	$wp_customize->add_setting( 'oaldr_categorize_positions', array(
+		'default'		=> 'lodge',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'refresh'
+	) );
+
+	$wp_customize->add_control( 'oaldr_categorize_positions', array(
+		'label'		=> __( 'Categorize Positions by?', 'OA Leadership Position Plugin' ),
+		'section'	=> 'oaldr_settings',
+		'settings'	=> 'oaldr_categorize_positions',
+		'type'		=> 'select',
+		'choices'	=> array(
+			'chapter' => __( 'Chapter', 'OA Leadership Position Plugin' ),			
+			'lodge'   => __( 'Lodge', 'OA Leadership Position Plugin' ),
+			'section' => __( 'Section', 'OA Leadership Position Plugin' ),
+		),
+	) );
 }
 add_action( 'customize_register', 'oaldr_customize_register' );
 

@@ -19,3 +19,5 @@ This plugin is hosted on GitHub, and can be updated using the [GitHub Updater Pl
 ## Version History
 
 * 0.1 Initial version - rough but working
+* 0.2 Add ACF JSON & related features
+* 0.3 Add taxonomies to People
