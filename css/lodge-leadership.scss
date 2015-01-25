@@ -44,10 +44,10 @@
         border-bottom: 1px solid #F2F2F2;    
 
         &.active {
-            background: red;
+            background: #C62228;
             color: #FFF !important;
             font-weight: 700;
-            border-top: 1px solid red;
+            border-top: 1px solid #C62228;
             border-bottom: 0 none;
         }
     }
@@ -55,12 +55,13 @@
 
 .oaldr-positions {
     margin-bottom: -20px;
-    text-align:center;
+    text-align: left;
     display:inline-block;
     max-width: 1080px;
     width:100%;
     vertical-align: top;
     min-height: 500px;
+    font-size: 0;
 
     .button_shortcode {
         font-size: 16px;
@@ -172,7 +173,7 @@
         content: '';
         width: 36px;
         height: 3px;
-        background: red;
+        background: #C62228;
         position: absolute;
         top: 0;
     }
@@ -196,7 +197,7 @@
         margin: 0 3px;
         display: inline-block;
         float: left;
-        color: red;
+        color: #C62228;
         border-bottom: 0;
 
         &:hover {
