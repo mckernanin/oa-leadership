@@ -47,32 +47,9 @@
             "disabled": 0
         },
         {
-            "key": "field_52c4daa79bb42",
-            "label": "Youth or Adviser",
-            "name": "youth_or_adviser",
-            "prefix": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Youth": "Youth",
-                "Adviser": "Adviser"
-            },
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "Youth",
-            "layout": "horizontal"
-        },
-        {
             "key": "field_524e17ea5d03e",
             "label": "Email",
-            "name": "team_email",
+            "name": "person_email",
             "prefix": "",
             "type": "email",
             "instructions": "",
@@ -120,6 +97,29 @@
             "disabled": 0
         },
         {
+            "key": "field_52c4daa79bb42",
+            "label": "Youth or Adviser",
+            "name": "youth_or_adviser",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Youth": "Youth",
+                "Adviser": "Adviser"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Youth",
+            "layout": "horizontal"
+        },
+        {
             "key": "field_52c4d82e9bb3f",
             "label": "Membership Level",
             "name": "membership_level",
@@ -144,41 +144,29 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_544e03e19c876",
-            "label": "Chapter",
-            "name": "chapter",
-            "prefix": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "choices": {
-                "Medicine Pipe": "Medicine Pipe",
-                "Medicine Bear": "Medicine Bear",
-                "Spirit Eagle": "Spirit Eagle",
-                "White Eagle": "White Eagle",
-                "Kodiak": "Kodiak",
-                "White Buffalo": "White Buffalo",
-                "Running Antelope": "Running Antelope"
-            },
-            "default_value": [
-
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "disabled": 0,
-            "readonly": 0
-        },
-        {
             "key": "field_545480b1b2419",
             "label": "Last Initial Only",
             "name": "last_initial_only",
             "prefix": "",
             "type": "true_false",
             "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_54c41e68f49a2",
+            "label": "Show Image",
+            "name": "show_image",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "Check this box to display this person's picture",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -216,5 +204,6 @@
         "format",
         "tags",
         "send-trackbacks"
-    ]
+    ],
+    "modified": 1422144843
 }
