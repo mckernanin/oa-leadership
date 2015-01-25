@@ -83,6 +83,12 @@ function oaldr_positions( $atts ) {
 		$last_initial_only = get_field('last_initial_only', $person);
 		$group = wp_get_post_terms( get_the_id(), 'oaldr_group');
 
+		if ( get_field('position_email') ) {
+			$email = get_field('position_email');
+		} else {
+			$email = get_field('person_email', $person);
+		}
+
 		if (get_field('is_position_available') == true) {
 			$available = 'open';
 		} else {
@@ -94,13 +100,12 @@ function oaldr_positions( $atts ) {
 		} else {
 			$lname_final = $last_name;
 		};
-		// var_dump($group);
 ?>
 
 <article class="oaldr-position <?php echo ' group-' . strtolower($group[0]->slug); ?> <?php echo $available; ?>" data-lname="<?php echo $lname_final; ?>">
 
 	<div class="oaldr-position-header">
-		<img src="<?php echo $thumb_src; ?>" alt="Headshot" class="img-circle">
+		<img src="<?php echo $thumb_src; ?>" alt="<?php echo $fname.' '.$lname_final; ?> Headshot" class="img-circle">
 	</div>
 	
 	<div class="oaldr-position-content">
@@ -113,7 +118,9 @@ function oaldr_positions( $atts ) {
 		}
 		?>
 		</h3>
-		<?php if (!empty($chapter)) : ?><p class="oaldr-level-and-group"><?php echo $membership_level; ?> Member of <?php echo $chapter; ?></p><?php endif; ?>	
+		<?php if (!empty($chapter)) : ?>
+			<p class="oaldr-level-and-group"><?php echo $membership_level; ?> Member of <?php echo $chapter; ?></p>
+		<?php endif; ?>	
 		<?php if ( is_user_logged_in() ) : ?>	
 			<?php if (!empty($phone_number)) : ?>
 				<p class="oaldr-phonenumber"><span class="icon_phone"></span><?php echo get_field('phone_number'); ?></p>
@@ -122,8 +129,10 @@ function oaldr_positions( $atts ) {
 	</div>
 	
 	<div class="oaldr-position-footer">
-		<a href="mailto:<?php echo antispambot( get_field('team_email', $person) ); ?>"><span class="dashicons dashicons-email"></span></a>
-		<?php if (current_user_can('edit_posts')) { ?><a href="<?php echo get_edit_post_link(); ?>" target="_blank"><div class="dashicons dashicons-edit"></div></a><?php } ?>
+		<a href="mailto:<?php echo antispambot( $email ); ?>"><span class="dashicons dashicons-email"></span></a>
+		<?php if (current_user_can('edit_posts')) : ?>
+			<a href="<?php echo get_edit_post_link(); ?>" target="_blank"><div class="dashicons dashicons-edit"></div></a>
+		<?php endif; ?>
 	</div>
 </article>
 
