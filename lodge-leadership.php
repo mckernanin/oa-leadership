@@ -5,7 +5,7 @@ Plugin URI: http://mckernan.in/lodge-leadership/
 Description: Easily manage Order of the Arrow Leadership Positions
 Author: Kevin McKernan
 Author URI: http://mckernan.in
-Version: 0.3
+Version: 0.3.1
 GitHub Plugin URI: mckernanin/oa-leadership
 Tested up to: 4.1
 */
