@@ -34,13 +34,13 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": [
-                {
-                    "rule_0": {
+                [
+                    {
                         "field": "field_544e05e6be49c",
                         "operator": "==",
                         "value": "no"
                     }
-                }
+                ]
             ],
             "wrapper": {
                 "width": "",
@@ -51,7 +51,9 @@
                 "oaldr_person"
             ],
             "taxonomy": "",
-            "filters": "",
+            "filters": [
+                "search"
+            ],
             "elements": [
                 "featured_image"
             ],
@@ -109,5 +111,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1422139437
+    "modified": 1423413249
 }
