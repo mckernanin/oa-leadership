@@ -4,7 +4,7 @@ function oaldr_filter( $atts ) {
 	ob_start();
 	extract( shortcode_atts( array (
 		'type' => 'oaldr_position',
-		'order' => 'date',
+		'order' => 'DESC',
 		'orderby' => 'menu_order',
 		'posts' => -1,
 		'offset' => 0
@@ -77,9 +77,10 @@ function oaldr_positions( $atts ) {
 		$first_name = get_field('first_name', $person);
 		$last_name = get_field('last_name', $person);
 		$youth_or_adviser = get_field('youth_or_adviser', $person);
-		$chapter = get_field('chapter', $person);
+		$chapter_array = wp_get_post_terms($person, 'oaldr_chapter');
+		$chapter = $chapter_array[0];
 		$membership_level = get_field('membership_level', $person);
-		$phone_number = get_field('phone_number', $person[0]);
+		$phone_number = get_field('phone_number', $person);
 		$last_initial_only = get_field('last_initial_only', $person);
 		$group = wp_get_post_terms( get_the_id(), 'oaldr_group');
 
@@ -106,6 +107,10 @@ function oaldr_positions( $atts ) {
 
 	<div class="oaldr-position-header">
 		<img src="<?php echo $thumb_src; ?>" alt="<?php echo $fname.' '.$lname_final; ?> Headshot" class="img-circle">
+		<?php if (current_user_can('edit_posts')) : ?>
+			<a href="<?php echo get_edit_post_link(); ?>" target="_blank" title="Edit Position"><div class="dashicons dashicons-groups"></div></a>
+			<a href="<?php echo get_edit_post_link($person); ?>" target="_blank" title="Edit Person"><div class="dashicons dashicons-admin-users edit-person"></div></a>
+		<?php endif; ?>
 	</div>
 	
 	<div class="oaldr-position-content">
@@ -119,20 +124,14 @@ function oaldr_positions( $atts ) {
 		?>
 		</h3>
 		<?php if (!empty($chapter)) : ?>
-			<p class="oaldr-level-and-group"><?php echo $membership_level; ?> Member of <?php echo $chapter; ?></p>
+			<p class="oaldr-level-and-group"><?php echo $membership_level; ?> Member of <?php echo $chapter->name; ?></p>
 		<?php endif; ?>	
 		<?php if ( is_user_logged_in() ) : ?>	
 			<?php if (!empty($phone_number)) : ?>
-				<p class="oaldr-phonenumber"><span class="icon_phone"></span><?php echo get_field('phone_number'); ?></p>
+				<p class="oaldr-phone"><a href="tel:<?php echo $phone_number; ?>"><span class="dashicons dashicons-phone"></span> <?php echo $phone_number; ?></a></p>
 			<?php endif; ?>
 		<?php endif; ?>	
-	</div>
-	
-	<div class="oaldr-position-footer">
-		<a href="mailto:<?php echo antispambot( $email ); ?>"><span class="dashicons dashicons-email"></span></a>
-		<?php if (current_user_can('edit_posts')) : ?>
-			<a href="<?php echo get_edit_post_link(); ?>" target="_blank"><div class="dashicons dashicons-edit"></div></a>
-		<?php endif; ?>
+		<p class="oaldr-email"><a href="mailto:<?php echo antispambot( $email ); ?>"><span class="dashicons dashicons-email"></span> <?php echo antispambot( $email ); ?></a></p>
 	</div>
 </article>
 

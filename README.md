@@ -5,7 +5,7 @@ In use on [Tahosa Lodge](http://tahosalodge.org) and [Section W2S](http://sectio
 
 ## Description
 I originally wrote this functionality for Tahosa Lodge, and recently duplicated it on Section W2S' website. 
-I made a significant # of improvements when adding it to the section site, and decided that I'd make it into a plugin so I didn't have to keep 2 copies of the same code up to date. I also feel like other scouting groups might like it.
+I made a significant number of improvements when adding it to the section site, and decided that I'd make it into a plugin so I didn't have to keep 2 copies of the same code up to date. I also feel like other scouting groups might like it.
 The plugin is very much a work in progress, as to start with, I need it to work on these two sites. I'm working on abstracting things out, so that there's nothing hardcoded.
 
 ## Requirements
@@ -21,3 +21,4 @@ This plugin is hosted on GitHub, and can be updated using the [GitHub Updater Pl
 * 0.1 Initial version - rough but working
 * 0.2 Add ACF JSON & related features
 * 0.3 Add taxonomies to People
+* 0.4 Add search on Position page when selecting a Person, overall styles, fix sort order
