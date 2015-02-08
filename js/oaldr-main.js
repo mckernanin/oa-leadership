@@ -4,7 +4,7 @@ jQuery(function($) {
 			target: '.oaldr-position'
 		},
 		load: {
-			sort: 'default:asc'
+			sort: 'default:desc'
 		}
 	});	
 });
